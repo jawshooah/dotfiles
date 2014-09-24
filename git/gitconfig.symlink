@@ -6,10 +6,11 @@
 [core]
 	quotepath = false
 	whitespace = fix,trailing-space,space-before-tab,cr-at-eol
-	excludesfile = /Users/josh/.gitignore_global
+	excludesfile = ~/.gitignore
 	ignorecase = false
+	editor=vim
 [merge]
-	tool = vimdiff
+	tool = diffmerge
 	verbosity = 2
 [push]
 	default = simple
@@ -109,3 +110,7 @@
 [diff]
 	algorithm = histogram
 	tool = diffmerge
+[help]
+	autocorrect = 1
+[hub]
+	protocol = ssh
