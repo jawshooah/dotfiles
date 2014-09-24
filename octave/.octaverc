@@ -1,0 +1,3 @@
+% Initialize graphics to use FLTK and OpenGL
+% graphics_toolkit ("fltk")
+
