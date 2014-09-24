@@ -1,3 +1,6 @@
 [submodule "vim/vim"]
 	path = vim/vim
 	url = git@github.com:jawshooah/vim-pathogen.git
+[submodule "sublime"]
+	path = sublime
+	url = git@github.com:jawshooah/sublime-user-package.git
