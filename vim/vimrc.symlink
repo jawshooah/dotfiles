@@ -1,4 +1,10 @@
+execute pathogen#infect()
 syntax on
+filetype plugin indent on
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+set number
+set colorcolumn=81
+set mouse=a
+
+highlight ColorColumn ctermbg=1
+
