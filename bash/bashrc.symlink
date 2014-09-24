@@ -53,8 +53,6 @@ export CLASSPATH="$CLASSPATH:$HOME/lib"
 
 export GNUTERM=x11
 
-export DYLD_INSERT_LIBRARIES="$HOME/git/stderred/build/libstderred.dylib${DYLD_INSERT_LIBRARIES:+:$DYLD_INSERT_LIBRARIES}"
-
 # Automatically add completion for all aliases to commands having completion
 # functions
 function alias_completion {
