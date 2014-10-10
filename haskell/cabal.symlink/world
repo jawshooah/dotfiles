@@ -1,2 +1,3 @@
+cabal-uninstall -any
 X11 >=1.5 && <1.7
 cabal -any
