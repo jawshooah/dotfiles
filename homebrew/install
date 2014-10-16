@@ -1,68 +1,118 @@
 # Install brews
+install ant
+install aspcud
+install atk
+install autoconf
 install bash-completion
-install gawk
-install git
-install gnu-getopt
-install hub
-install openssl
-install psgrep
-install sbt
-install spark
-install vim
-install zsh
 install brew-cask
-install gdbm
-install git-flow-avh
-install gnu-sed
-install legit
-install pcre
-install python
-install scala
-install sqlite
-install wget
+install cabal-install
+install cairo
+install clasp
+install cmake
 install coreutils
+install darcs
+install fontconfig
+install freetype
+install gawk
+install gd
+install gdbm
+install gdk-pixbuf
 install gettext
+install ghc
+install ghostscript
+install git
+install git-flow-avh
+install glib
 install gmp
+install gnu-getopt
+install gnu-sed
+install gobject-introspection
 install grc
+install gringo
+install grunt-completion
+install gtk+
+install harfbuzz
+install hub
+install icu4c
+install ilmbase
+install imagemagick
+install jbig2dec
+install jpeg
+install legit
+install libcroco
+install libffi
+install liblqr
+install libpng
+install librsvg
+install libtiff
+install libtool
+install libwmf
+install libyaml
+install little-cms
+install little-cms2
+install nginx
 install node
+install objective-caml
+install opam
+install openexr
+install openjpeg21
+install openssl
+install pango
+install pcre
+install pixman
 install pkg-config
+install psgrep
+install python
+install rbenv
 install readline
+install ruby
+install ruby-build
+install sbt
+install scala
+install sdcv
 install shellcheck
+install spark
+install sqlite
+install subversion
 install typesafe-activator
+install vim
+install webp
+install wget
 install xz
+install zsh
 
 # Install casks
 cask install adobe-reader
-cask install flash-player
-cask install iterm2
-cask install navicat-for-postgresql
-cask install spotify
 cask install android-file-transfer
-cask install github
-cask install java
-cask install origin
-cask install steam
 cask install bettertouchtool
-cask install gog-downloader
-cask install karabiner
-cask install robomongo
-cask install utorrent
 cask install diffmerge
-cask install google-chrome
-cask install kindle
-cask install scala-ide
-cask install virtualbox
 cask install disk-inventory-x
-cask install google-drive
-cask install lastpass-universal
-cask install silverlight
-cask install vlc
 cask install dropbox
-cask install hipchat
-cask install music-manager
-cask install skype
-cask install wd-security
 cask install firefox
-cask install intellij-idea-ce
+cask install flash-player
+cask install github
+cask install gog-downloader
+cask install google-chrome
+cask install google-drive
+cask install hipchat
+cask install iterm2
+cask install java
+cask install karabiner
+cask install lastpass-universal
+cask install libreoffice
+cask install mou
+cask install music-manager
 cask install mysqlworkbench
+cask install navicat-for-postgresql
+cask install origin
+cask install robomongo
+cask install scala-ide
+cask install silverlight
+cask install skype
 cask install sourcetree
+cask install spotify
+cask install steam
+cask install utorrent
+cask install virtualbox
+cask install vlc
+cask install xquartz
