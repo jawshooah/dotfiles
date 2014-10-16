@@ -5,5 +5,5 @@
 	path = vim/vim.symlink
 	url = git@github.com:jawshooah/vim-pathogen.git
 [submodule "opam.symlink"]
-	path = opam.symlink
+	path = ocaml/opam.symlink
 	url = git@github.com:jawshooah/opam-repository.git
