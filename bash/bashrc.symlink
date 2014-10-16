@@ -11,6 +11,11 @@ alias subl='open -a Sublime\ Text'
 
 alias wha='which -a'
 
+# Shorthand for colorized sdcv output
+function dict {
+  sdcv --color "$@" | less -r
+}
+
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 
 # Set NodeJS path
