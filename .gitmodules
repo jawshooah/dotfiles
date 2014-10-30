@@ -7,3 +7,6 @@
 [submodule "opam.symlink"]
 	path = ocaml/opam.symlink
 	url = git@github.com:jawshooah/opam-repository.git
+[submodule "git/scm_breeze.symlink"]
+	path = git/scm_breeze.symlink
+	url = https://github.com/jawshooah/scm_breeze
