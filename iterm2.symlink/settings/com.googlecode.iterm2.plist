@@ -5774,8 +5774,6 @@
 	<string>0</string>
 	<key>NSNavBrowserPreferedColumnContentWidth</key>
 	<real>186</real>
-	<key>NSNavLastCurrentDirectory</key>
-	<string>~/iTerm2/settings</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/iTerm2</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
@@ -5786,6 +5784,19 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSTableView Columns KeyBingingTable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATCG
+		</data>
+		<string>198</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATGG
+		</data>
+		<string>198</string>
+	</array>
 	<key>NSTableView Columns NSNavOutlineColumnSettings.v1</key>
 	<array>
 		<data>
@@ -5829,6 +5840,8 @@
 		</data>
 		<string>60</string>
 	</array>
+	<key>NSTableView Hidden Columns KeyBingingTable</key>
+	<array/>
 	<key>NSTableView Hidden Columns NSNavOutlineColumnSettings.v1</key>
 	<array>
 		<data>
@@ -5852,6 +5865,8 @@
 		hAErDHBoeXNpY2FsU2l6ZYY=
 		</data>
 	</array>
+	<key>NSTableView Sort Ordering KeyBingingTable</key>
+	<array/>
 	<key>NSTableView Sort Ordering NSNavOutlineColumnSettings.v1</key>
 	<array>
 		<data>
@@ -5863,9 +5878,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>772 317 201 309 0 0 1920 1178 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>596 638 924 485 0 0 1920 1178 </string>
+	<string>391 608 924 485 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>815 275 585 451 0 0 1920 1178 </string>
+	<string>0 0 1920 1200 0 0 1920 1178 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -6681,7 +6696,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-11-14T07:58:31Z</date>
+	<date>2014-11-29T05:05:14Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>ShowBookmarkName</key>
@@ -6727,6 +6742,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20131109</string>
+	<string>1.0.0.20130622</string>
 </dict>
 </plist>
