@@ -5775,7 +5775,7 @@
 	<key>NSNavBrowserPreferedColumnContentWidth</key>
 	<real>186</real>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/iTerm2</string>
+	<string>~</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
 	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -6676,7 +6676,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/Josh/iTerm2/settings</string>
+	<string>/Users/josh/.iterm2/settings</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
