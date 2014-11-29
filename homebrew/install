@@ -7,6 +7,7 @@ install bash-completion
 install brew-cask
 install cabal-install
 install cairo
+install camlp4
 install clasp
 install cmake
 install coreutils
@@ -63,6 +64,7 @@ install pixman
 install pkg-config
 install psgrep
 install python
+install python3
 install rbenv
 install readline
 install ruby
@@ -97,9 +99,11 @@ cask install google-drive
 cask install hipchat
 cask install iterm2
 cask install java
+cask install java7
 cask install karabiner
 cask install lastpass-universal
 cask install libreoffice
+cask install mono-mdk
 cask install mou
 cask install music-manager
 cask install mysqlworkbench
@@ -112,7 +116,7 @@ cask install skype
 cask install sourcetree
 cask install spotify
 cask install steam
-cask install utorrent
 cask install virtualbox
 cask install vlc
+cask install xamarin-studio
 cask install xquartz
