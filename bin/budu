@@ -1,2 +1,2 @@
-brew update && brew doctor && brew upgrade
+brew update && brew doctor && brew upgrade && brew cleanup && brew cask cleanup
 
