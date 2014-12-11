@@ -1,3 +1,6 @@
+# Taps
+tap homebrew/completions
+
 # Install brews
 install ant
 install aspcud
@@ -101,7 +104,7 @@ cask install iterm2
 cask install java
 cask install java7
 cask install karabiner
-cask install lastpass-universal
+cask install lastpass
 cask install libreoffice
 cask install mono-mdk
 cask install mou
