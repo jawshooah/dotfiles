@@ -13,6 +13,7 @@ then
 fi
 
 # Install homebrew packages
+brew tap homebrew/boneyard
 brew bundle "$(dirname $0)/install" 
 
 exit 0
