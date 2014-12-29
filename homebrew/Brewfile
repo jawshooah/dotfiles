@@ -12,12 +12,28 @@ brew 'coreutils'
 brew 'findutils'
 brew 'gnu-sed'
 
-# Latest Python
+# Python
 brew 'python'
 brew 'python3'
 
-# Latest Ruby
+# Ruby
 brew 'ruby'
+brew 'ruby-build'
+
+# JavaScript
+brew 'node'
+brew 'jshint'
+
+# Java
+cask 'java'
+cask 'java7'
+
+# Scala
+brew 'scala'
+brew 'sbt'
+brew 'scalastyle'
+cask 'scala-ide'
+cask 'intellij-idea-ce'
 
 # Productivity
 brew 'psgrep'
@@ -37,7 +53,6 @@ cask 'skype'
 # Developer tools
 cask 'chrome-devtools'
 cask 'sublime-text3'
-cask 'scala-ide'
 cask 'xamarin-studio'
 cask 'diffmerge'
 
