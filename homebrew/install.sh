@@ -6,14 +6,21 @@
 # using Homebrew.
 
 # Check for Homebrew
-if test ! $(which brew)
+if test ! "$(which brew)"
 then
   echo "  Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" > /tmp/homebrew-install.log
 fi
 
+# Check for Brewdler
+if test ! "$(which brewdle)"
+then
+  echo "  Installing Brewdler for you."
+  gem install brewdler > /tmp/brewdler-install.log
+fi
+
 # Install homebrew packages
-brew tap homebrew/boneyard
-brew bundle "$(dirname $0)/install" 
+cd "$(dirname "$0")"
+brewdle install
 
 exit 0

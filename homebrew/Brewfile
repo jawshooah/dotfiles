@@ -1,0 +1,67 @@
+# Completions
+tap 'homebrew/completions'
+
+# Git stuff
+brew 'git'
+brew 'git-flow-avh'
+brew 'hub'
+brew 'legit'
+
+# GNU Core Utilities
+brew 'coreutils'
+brew 'findutils'
+brew 'gnu-sed'
+
+# Latest Python
+brew 'python'
+brew 'python3'
+
+# Latest Ruby
+brew 'ruby'
+
+# Productivity
+brew 'psgrep'
+brew 'vim'
+
+# Versioned casks
+tap 'caskroom/homebrew-versions'
+
+# XQuartz
+cask 'xquartz'
+
+# Web
+cask 'google-chrome'
+cask 'silverlight'
+cask 'skype'
+
+# Developer tools
+cask 'chrome-devtools'
+cask 'sublime-text3'
+cask 'scala-ide'
+cask 'xamarin-studio'
+cask 'diffmerge'
+
+# Database tools
+cask 'mysqlworkbench'
+cask 'pgadmin3'
+cask 'robomongo'
+
+# Media
+cask 'music-manager'
+cask 'vlc'
+cask 'spotify'
+
+# Cloud Storage
+cask 'dropbox'
+cask 'google-drive'
+
+# Local system info
+cask 'disk-inventory-x'
+cask 'menumeters'
+
+# Android
+cask 'android-file-transfer'
+
+# Gaming
+cask 'steam'
+cask 'origin'
