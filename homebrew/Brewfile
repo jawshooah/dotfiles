@@ -1,5 +1,8 @@
-# Completions
+# Homebrew Completions
 tap 'homebrew/completions'
+
+# Binaries (not built from source)
+tap 'homebrew/binary'
 
 # Git stuff
 brew 'git'
@@ -23,6 +26,7 @@ brew 'ruby-build'
 # JavaScript
 brew 'node'
 brew 'jshint'
+brew 'jsl'
 
 # Java
 cask 'java'
