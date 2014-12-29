@@ -1,3 +1,2 @@
 #!/bin/sh
 git guilt HEAD~1
-
