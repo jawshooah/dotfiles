@@ -30,29 +30,33 @@ export CAML_LD_LIBRARY_PATH=~/.opam/system/lib/stublibs:\
 export OCAML_TOPLEVEL_PATH=~/.opam/system/lib/toplevel;
 
 # Set base PATH
-export PATH="/usr/local/bin:/usr/bin:/bin:/user/local/sbin:/usr/sbin:/sbin:/usr/X11/bin"
+PATH="/usr/local/bin:/usr/bin:/bin:/user/local/sbin:/usr/sbin:/sbin:/usr/X11/bin"
 
 # Add ruby executables
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Add LaTeX executables
-export PATH="/usr/local/texlive/2013/bin/x86_64-darwin:$PATH"
+PATH="/usr/local/texlive/2013/bin/x86_64-darwin:$PATH"
 
 # Add GNU core utilities
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Add GNU sed
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 
 # Add Opam executables
-export PATH="$HOME/.opam/system/bin:$PATH"
+PATH="$HOME/.opam/system/bin:$PATH"
 
 # Add Cabal executables
-export PATH="$HOME/.cabal/bin:$PATH"
+PATH="$HOME/.cabal/bin:$PATH"
 
 # Add user executables
-export PATH="$HOME/bin:$PATH"
+PATH="$HOME/bin:$PATH"
+
+export PATH
+export MANPATH
 
 export CLASSPATH="$CLASSPATH:$HOME/lib"
 
