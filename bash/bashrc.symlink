@@ -38,6 +38,13 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 # Add LaTeX executables
 export PATH="/usr/local/texlive/2013/bin/x86_64-darwin:$PATH"
 
+# Add GNU core utilities
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# Add GNU sed
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+
 # Add Opam executables
 export PATH="$HOME/.opam/system/bin:$PATH"
 
