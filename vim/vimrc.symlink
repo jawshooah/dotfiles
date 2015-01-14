@@ -27,3 +27,8 @@ match ErrorMsg '\s\+$'
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Use 2 spaces for indentation
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=4 sw=4 expandtab
