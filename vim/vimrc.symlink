@@ -24,3 +24,6 @@ set termencoding=utf-8
 
 " Highlight trailing whitespace
 match ErrorMsg '\s\+$'
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
