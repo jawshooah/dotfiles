@@ -12,6 +12,8 @@ set expandtab
 
 highlight ColorColumn ctermbg=1
 
+set shell=bash\ --login
+
 " Powerline configuration
 set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 set guifont=Menlo\ LG\ M\ Regular\ for\ Powerline:h12
@@ -30,5 +32,17 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Use 2 spaces for indentation
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd BufEnter *.rb setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 expandtab
+
+" Code folding for javascript
+au FileType javascript call JavaScriptFold()
+
+" Easy window switching
+:nmap <silent> <C-h> :wincmd h<CR>
+:nmap <silent> <C-j> :wincmd j<CR>
+:nmap <silent> <C-k> :wincmd k<CR>
+:nmap <silent> <C-l> :wincmd l<CR>
+
+" Automatically cd into directory of current file
+autocmd BufEnter * silent! lcd %:p:h
