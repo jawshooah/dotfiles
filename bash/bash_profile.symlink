@@ -1,24 +1,22 @@
-[[ -s ~/.bashrc ]] && source ~/.bashrc
-[[ -s ~/.brewrc ]] && source ~/.brewrc
-[[ -s ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
+#!/bin/bash
 
-# arcanist configuration
-export ARC_PATH=~/git/arcanist
-[[ -s $ARC_PATH/resources/shell/bash-completion ]] && source \
-$ARC_PATH/resources/shell/bash-completion
-
-# OPAM configuration
-. ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+# Source a file if it exists and is not empty
+source_if_exists() {
+  if [ -s "$1" ]; then
+    echo "Sourcing $1"
+    source "$1"
+  fi
+}
 
 export CLICOLOR=1
 export TERM="xterm-color"
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-PS1='[\[\e[0;0m\]\A\[\e[0m\]]\[\e[0;32m\]\u\[\e[0m\]:\[\e[0;34m\]\w\[\033[01;33m\]$(__git_ps1) \[\e[0m\]\$ '
+export PS1='[\[\e[0;0m\]\A\[\e[0m\]]\[\e[0;32m\]\u\[\e[0m\]:\[\e[0;34m\]\w\[\033[01;33m\]$(__git_ps1) \[\e[0m\]\$ '
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
-
-source "`brew --prefix`/etc/grc.bashrc"
-
+source_if_exists "$HOME/.bashrc"
+source_if_exists "$HOME/.opam/opam-init/init.sh"
+source_if_exists "$(brew --prefix)/etc/bash_completion"
+source_if_exists "$(brew --prefix)/etc/grc.bashrc"
+source_if_exists "$HOME/.rvm/scripts/rvm"
+source_if_exists "$HOME/.scm_breeze/scm_breeze.sh"
