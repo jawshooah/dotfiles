@@ -1,3 +1,0 @@
-#!/bin/sh
-brew update && brew doctor && brew upgrade && brew cleanup && brew cask cleanup
-

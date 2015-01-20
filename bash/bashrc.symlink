@@ -9,9 +9,24 @@ alias gp='grep -Hn --color=auto'
 alias fgp='fgrep -Hn --color=auto'
 alias egp='egrep -Hn --color=auto'
 alias vlc='open -a Vlc'
-alias subl='open -a Sublime\ Text'
-
 alias wha='which -a'
+
+# Homebrew aliases
+alias bd='brew doctor'
+alias be='brew edit'
+alias bh='brew home'
+alias bi='brew install'
+alias bus='brew uninstall'
+alias bud='brew update'
+alias bug='brew upgrade'
+alias budu='brew update && brew doctor && brew upgrade'
+
+# Homebrew-cask aliases
+alias bce='brew cask edit'
+alias bch='brew cask home'
+alias bci='brew cask install'
+alias bcu='brew cask uninstall'
+alias bcz='brew cask zap'
 
 # Shorthand for colorized sdcv output
 dict() {
