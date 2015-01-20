@@ -103,7 +103,7 @@
 	templatedir = ~/.git_template
 [difftool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 	trustExitCode = true
@@ -115,10 +115,10 @@
 [hub]
 	protocol = ssh
 [mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+	cmd = diffmerge --nosplash --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
 [difftool "diffmerge"]
-	cmd = diffmerge $LOCAL $REMOTE
+	cmd = diffmerge --nosplash $LOCAL $REMOTE
 [mergetool]
 	keepBackup = false
 [github]
