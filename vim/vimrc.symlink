@@ -13,8 +13,6 @@ set expandtab
 set splitbelow
 set splitright
 
-colorscheme base16-default
-
 highlight ColorColumn ctermbg=1
 
 set shell=bash
