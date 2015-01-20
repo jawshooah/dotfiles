@@ -15,18 +15,22 @@ alias wha='which -a'
 alias bd='brew doctor'
 alias be='brew edit'
 alias bh='brew home'
-alias bi='brew install'
+alias bi='brew info'
+alias bu='brew update'
+alias bis='brew install'
 alias bus='brew uninstall'
-alias bud='brew update'
 alias bug='brew upgrade'
 alias budu='brew update && brew doctor && brew upgrade'
 
 # Homebrew-cask aliases
+alias bcd='brew cask doctor'
 alias bce='brew cask edit'
 alias bch='brew cask home'
-alias bci='brew cask install'
-alias bcu='brew cask uninstall'
-alias bcz='brew cask zap'
+alias bci='brew cask info'
+alias bcu='brew cask update'
+alias bcis='brew cask install'
+alias bcus='brew cask uninstall'
+alias bczp='brew cask zap'
 
 # Shorthand for colorized sdcv output
 dict() {
