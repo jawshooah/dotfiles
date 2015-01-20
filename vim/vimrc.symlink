@@ -10,6 +10,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set splitbelow
+set splitright
+
 highlight ColorColumn ctermbg=1
 
 set shell=bash\ --login
