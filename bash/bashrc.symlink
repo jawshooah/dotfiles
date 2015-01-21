@@ -11,6 +11,9 @@ alias egp='egrep -Hn --color=auto'
 alias vlc='open -a Vlc'
 alias wha='which -a'
 
+# Colorize command output
+alias colorize='python -m colorize'
+
 # Homebrew aliases
 alias bd='brew doctor'
 alias be='brew edit'
