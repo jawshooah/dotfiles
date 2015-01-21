@@ -40,61 +40,40 @@ dict() {
   sdcv --color "$@" | less -r
 }
 
-export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
-
-# Set NodeJS path
-export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
-
-# Use Vim as default editor
-export EDITOR="vim"
-
-# Setup Opam environment
-export CAML_LD_LIBRARY_PATH=~/.opam/system/lib/stublibs:\
-/usr/local/lib/ocaml/stublibs;
-export OCAML_TOPLEVEL_PATH=~/.opam/system/lib/toplevel;
-
-# Set base PATH
-PATH="/usr/local/bin:/usr/bin:/bin:/user/local/sbin:/usr/sbin:/sbin:/usr/X11/bin"
-
-# Add ruby executables
-PATH="/usr/local/opt/ruby/bin:$PATH"
-
-# Add LaTeX executables
-PATH="/usr/local/texlive/2013/bin/x86_64-darwin:$PATH"
-
-# Add GNU core utilities
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-# Add GNU sed
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-
-# Add Opam executables
-PATH="$HOME/.opam/system/bin:$PATH"
-
-# Add Cabal executables
-PATH="$HOME/.cabal/bin:$PATH"
-
-# Add user executables
-PATH="$HOME/bin:$PATH"
-
-export PATH
-export MANPATH
-
-# Change alias if we are using GNU ls
-ls --color -d . >/dev/null 2>&1 && alias ls='ls --color'
-
-export CLASSPATH="$CLASSPATH:$HOME/lib"
-
-export GNUTERM=x11
-
-export QTDIR=/usr/local
+export EDITOR='vim'
+export GNUTERM='x11'
 export JAVA_HOME="$(/usr/libexec/java_home -v '1.7*')"
 
-export PERL_LOCAL_LIB_ROOT="$HOME/perl5:$PERL_LOCAL_LIB_ROOT";
-export PERL_MB_OPT="--install_base "$HOME/perl5"";
-export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5";
-export PERL5LIB="$HOME/perl5/lib/perl5:$PERL5LIB";
-export PATH="$HOME/perl5/bin:$PATH";
-export GOPATH=~/GO
+NODE_PATH='/usr/local/lib/node_modules'
+NODE_PATH="$HOME/node_modules:$NODE_PATH"
+export NODE_PATH
+
+CAML_LD_LIBRARY_PATH='/usr/local/lib/ocaml/stublibs'
+CAML_LD_LIBRARY_PATH="$HOME/.opam/system/lib/stublibs:$CAML_LD_LIBRARY_PATH"
+export CAML_LD_LIBRARY_PATH
+
+OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
+export OCAML_TOPLEVEL_PATH
+
+PATH='/sbin'
+PATH="/usr/sbin:$PATH"
+PATH="/usr/local/sbin:$PATH"
+PATH="/bin:$PATH"
+PATH="/usr/bin:$PATH"
+PATH="/usr/X11/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/ruby/bin:$PATH"
+PATH="$HOME/.opam/system/bin:$PATH"
+PATH="$HOME/.cabal/bin:$PATH"
+PATH="$HOME/.rvm/bin:$PATH"
+PATH="$HOME/bin:$PATH"
+export PATH
+
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+export MANPATH
+
+# Change ls alias if we are using GNU
+ls --color -d . >/dev/null 2>&1 && alias ls='ls --color'
