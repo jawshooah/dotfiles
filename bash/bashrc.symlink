@@ -15,25 +15,29 @@ alias wha='which -a'
 alias colorize='python -m colorize'
 
 # Homebrew aliases
+alias bc='brew cleanup'
 alias bd='brew doctor'
 alias be='brew edit'
 alias bh='brew home'
 alias bi='brew info'
 alias bu='brew update'
 alias bis='brew install'
-alias bus='brew uninstall'
 alias bug='brew upgrade'
-alias budu='brew update && brew doctor && brew upgrade'
+alias bus='brew uninstall'
+alias budu='bu && bd && bug'
 
 # Homebrew-cask aliases
+alias bcc='brew cask cleanup'
 alias bcd='brew cask doctor'
 alias bce='brew cask edit'
 alias bch='brew cask home'
 alias bci='brew cask info'
 alias bcu='brew cask update'
 alias bcis='brew cask install'
+alias bcug='brew cask upgrade'
 alias bcus='brew cask uninstall'
 alias bczp='brew cask zap'
+alias buduc='budu && bc && bcc'
 
 # Shorthand for colorized sdcv output
 dict() {
