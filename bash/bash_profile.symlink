@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Change iterm2 profile.
 # Usage: it2prof ProfileName (case sensitive)
