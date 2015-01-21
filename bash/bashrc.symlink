@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# aliases
+# Common aliases
 alias ..='cd ..'
 alias cd..='cd ..'
-# alias ls='ls -G'
 alias l='ll'
+alias ls='ls -G'
 alias gp='grep -Hn --color=auto'
 alias fgp='fgrep -Hn --color=auto'
 alias egp='egrep -Hn --color=auto'
@@ -81,6 +81,9 @@ PATH="$HOME/bin:$PATH"
 
 export PATH
 export MANPATH
+
+# Change alias if we are using GNU ls
+ls --color -d . >/dev/null 2>&1 && alias ls='ls --color'
 
 export CLASSPATH="$CLASSPATH:$HOME/lib"
 
