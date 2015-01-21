@@ -45,11 +45,11 @@ hg_prompt() {
 # shellcheck disable=SC2016
 setup_prompt() {
   local prefix='\n${ANSI_BRED}[\A] '
-  local user='${ANSI_BGRN}\u${ANSI_WHT}@${ANSI_BCYN}\h '
+  local user='${ANSI_BGRN}\u${ANSI_BBLK}@${ANSI_BCYN}\h '
   local cwd='${ANSI_BLU}\w'
   local git='${ANSI_BYLO}$(__git_ps1 " (%s)")'
   local hg='$(hg_prompt)'
-  local suffix='${ANSI_WHT}\n\$ '
+  local suffix='${ANSI_BBLK}\n\$ ${ANSI_WHT}'
   PS1="${prefix}${user}${cwd}${git}${hg}${suffix}"
 }
 
