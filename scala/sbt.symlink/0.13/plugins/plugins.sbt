@@ -3,14 +3,14 @@ resolvers ++= Seq(
   "Sonatype releases" at "http://oss.sonatype.org/content/repositories/releases/"
 )
 
-// Get IntelliJ IDEA plugin
+// IntelliJ IDEA plugin
 addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
 
-// Get Eclipse plugin
+// Eclipse plugin
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.5.0")
 
-// Get Scalastyle plugin
+// Scalastyle plugin
 addSbtPlugin("org.scalastyle" %% "scalastyle-sbt-plugin" % "0.6.0")
 
-// Get Scalariform plugin (Daniel Trinh's fork)
+// Scalariform plugin (Daniel Trinh's fork)
 addSbtPlugin("com.danieltrinh" % "sbt-scalariform" % "1.3.0")
