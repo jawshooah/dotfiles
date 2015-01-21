@@ -1,5 +1,6 @@
 # Automatically add completion for all aliases to commands having completion
 # functions
+# https://superuser.com/a/437508
 function alias_completion {
   local namespace="alias_completion"
 
