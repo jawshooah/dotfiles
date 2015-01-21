@@ -39,7 +39,7 @@ hg_prompt() {
   local bookmark="${ANSI_WHT}{ : ${ANSI_BBLU}{bookmark}}"
   local status="${ANSI_BYLO}{status}"
   local suffix="${ANSI_BMGT})"
-  hg prompt "${prefix}${full_branch}${bookmark}${status}${suffix}" 2> /dev/null
+  hg prompt "${prefix}${full_branch}${bookmark}${status}${suffix}" 2>/dev/null
 }
 
 # shellcheck disable=SC2016
