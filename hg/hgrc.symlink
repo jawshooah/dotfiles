@@ -1,0 +1,2 @@
+[extensions]
+prompt = ~/dev/bitbucket/hg-prompt/prompt.py
