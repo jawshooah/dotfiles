@@ -78,9 +78,6 @@
 	# Prune stale remote branches
 	prune-all = !git remote | xargs -n 1 git remote prune
 
-	# Undo any change in current branch
-	undo = reset --hard
-
 	# Common diff options
 	ch = diff --name-status
 	ds = diff --stat
