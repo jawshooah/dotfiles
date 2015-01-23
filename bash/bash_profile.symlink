@@ -10,6 +10,7 @@ it2prof() {
 # shellcheck disable=SC2034
 setup_color_codes() {
   # ANSI color codes
+  DEFAULT=$'\e[0;0m'
   ANSI_BLK=$'\e[0;30;40m'
   ANSI_RED=$'\e[0;31;40m'
   ANSI_GRN=$'\e[0;32;40m'
@@ -44,13 +45,13 @@ hg_prompt() {
 
 # shellcheck disable=SC2016
 setup_prompt() {
-  local prefix='\n${ANSI_BRED}[\A] '
+  local prefix='\n${ANSI_BMGT}['
   local user='${ANSI_BGRN}\u${ANSI_BBLK}@${ANSI_BCYN}\h '
-  local cwd='${ANSI_BLU}\w'
+  local cwd='${ANSI_BLU}\w${ANSI_BMGT}]'
   local git='${ANSI_BYLO}$(__git_ps1 " (%s)")'
   local hg='$(hg_prompt)'
-  local suffix='${ANSI_BBLK}\n\$ ${ANSI_WHT}'
-  PS1="${prefix}${user}${cwd}${git}${hg}${suffix}"
+  local suffix='${ANSI_BBLK}\n\$ ${DEFAULT}'
+  export PS1="${prefix}${user}${cwd}${git}${hg}${suffix}"
 }
 
 setup_color_codes
