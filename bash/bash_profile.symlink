@@ -54,8 +54,11 @@ setup_prompt() {
   export PS1="${prefix}${user}${cwd}${git}${hg}${suffix}"
 }
 
-setup_color_codes
-setup_prompt
+#TODO fix weird bug where you can't delete to start of prompt
+#setup_color_codes
+#setup_prompt
+PROMPT_COMMAND='RET=$?; echo; if [ $RET != 0 ] ; then echo $'\''\e[0;31;40m'\''"rc: $RET"$'\''\e[0;0m'\''; fi; if [ "$PWD" != "$HOME" ]; then if [ $( ls -A | wc -l ) -lt 20 ]; then ls -mAF; fi; else ls -mF; fi'
+PS1='\[\033[0;36m\]\u\[\033[00m\] in \[\033[0;36m\]$( pwd ) ($( OUT=$( ls -A | wc -l ); echo $OUT ) entries, $(( $( ls -A | wc -l ) - $( ls | wc -l ) )) hidden)\[\033[1;33m\]$(__git_ps1)\n\[\033[1;36m\]\# \! \$\[\033[;m\] '
 
 export SUDO_PS1="\[\h:\w\] \u\\$ "
 
