@@ -120,3 +120,12 @@
     keepBackup = false
 [github]
     user = jawshooah
+[git-up "fetch"]
+    prune = true
+[git-up "rebase"]
+    log-hook = "echo \"changes on $1:\"; git log --oneline --decorate $1..$2"
+    arguments = --preserve-merges --committer-date-is-author-date --fork-point
+[rebase]
+    autostash = true
+[rerere]
+    enabled = true
