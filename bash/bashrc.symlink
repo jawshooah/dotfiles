@@ -13,6 +13,7 @@ alias wha='which -a'
 
 # Colorize command output
 alias colorize='python -m colorize'
+alias svn='colorsvn'
 
 # Homebrew aliases
 alias bc='brew cleanup'
