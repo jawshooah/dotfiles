@@ -53,6 +53,7 @@ cask 'xquartz'
 cask 'google-chrome'
 cask 'silverlight'
 cask 'skype'
+cask 'flash'
 
 # Developer tools
 cask 'chrome-devtools'
