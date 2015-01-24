@@ -16,11 +16,11 @@ fi
 if test ! "$(which brewdle)"
 then
   echo "  Installing Brewdler for you."
-  gem install brewdler > /tmp/brewdler-install.log
+  gem install brewdler
 fi
 
 # Install homebrew packages
 cd "$(dirname "$0")"
-brewdle install
+brewdle install --trace
 
 exit 0
