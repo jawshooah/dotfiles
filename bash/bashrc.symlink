@@ -47,7 +47,7 @@ dict() {
 
 export EDITOR='vim'
 export GNUTERM='x11'
-export JAVA_HOME="$(/usr/libexec/java_home -v '1.7*')"
+export JAVA_HOME="$(/usr/libexec/java_home)"
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
 NODE_PATH='/usr/local/lib/node_modules'
