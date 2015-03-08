@@ -109,11 +109,11 @@
     autocorrect = 1
 [hub]
     protocol = ssh
-[mergetool "diffmerge"]
-    cmd = diffmerge --nosplash --merge --result=$MERGED $LOCAL $BASE $REMOTE
-    trustExitCode = true
 [difftool "diffmerge"]
-    cmd = diffmerge --nosplash $LOCAL $REMOTE
+    cmd = diffmerge 2>/dev/null --nosplash \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+    cmd = diffmerge 2>/dev/null --nosplash --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    trustExitCode = true
 [mergetool]
     keepBackup = false
 [github]
