@@ -49,10 +49,7 @@ export EDITOR='vim'
 export GNUTERM='x11'
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
-
-NODE_PATH='/usr/local/lib/node_modules'
-NODE_PATH="$HOME/node_modules:$NODE_PATH"
-export NODE_PATH
+export NVM_DIR="$HOME/.nvm"
 
 PATH='/sbin'
 PATH="/usr/sbin:$PATH"
