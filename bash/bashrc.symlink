@@ -54,13 +54,6 @@ NODE_PATH='/usr/local/lib/node_modules'
 NODE_PATH="$HOME/node_modules:$NODE_PATH"
 export NODE_PATH
 
-CAML_LD_LIBRARY_PATH='/usr/local/lib/ocaml/stublibs'
-CAML_LD_LIBRARY_PATH="$HOME/.opam/system/lib/stublibs:$CAML_LD_LIBRARY_PATH"
-export CAML_LD_LIBRARY_PATH
-
-OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
-export OCAML_TOPLEVEL_PATH
-
 PATH='/sbin'
 PATH="/usr/sbin:$PATH"
 PATH="/usr/local/sbin:$PATH"
@@ -71,7 +64,6 @@ PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/ruby/bin:$PATH"
-PATH="$HOME/.opam/system/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
 PATH="$HOME/.rvm/bin:$PATH"
 PATH="$HOME/bin:$PATH"
