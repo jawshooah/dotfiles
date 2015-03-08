@@ -56,8 +56,8 @@
     setup = !sh -c 'git branch -u origin/$1' -
 
     # Clean all untracked and ignored files and directories
-    clean-all = clean -d -X
-    cla = clean -d -X
+    clean-all = clean -dxf
+    cla = clean -dxf
 
     # Log with graph
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
