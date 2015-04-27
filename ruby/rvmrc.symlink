@@ -1,3 +1,0 @@
-rvm_gem_options="--no-rdoc --no-ri"
-rvm_install_on_use_flag=1
-rvm_tar_flags="--no-same-owner --delay-directory-restore"
