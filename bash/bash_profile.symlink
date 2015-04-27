@@ -79,10 +79,7 @@ export GIT_PS1_SHOWCOLORHINTS=1
 SRC_BASHRC="$HOME/.bashrc"
 SRC_BASH_COMPLETION="$(brew --prefix)/etc/bash_completion"
 SRC_GRC="$(brew --prefix)/etc/grc.bashrc"
-SRC_NVM="$(brew --prefix nvm)/nvm.sh"
-SRC_RVM="$HOME/.rvm/scripts/rvm"
 SRC_SCM_BREEZE="$HOME/.scm_breeze/scm_breeze.sh"
-SRC_TMUXINATOR="$HOME/.bin/tmuxinator.bash"
 
 source_if_exists() {
   [ -s "$1" ] && source "$1"
@@ -91,7 +88,4 @@ source_if_exists() {
 source_if_exists "$SRC_BASHRC"
 source_if_exists "$SRC_BASH_COMPLETION"
 source_if_exists "$SRC_GRC"
-source_if_exists "$SRC_NVM"
-source_if_exists "$SRC_RVM"
 source_if_exists "$SRC_SCM_BREEZE"
-source_if_exists "$SRC_TMUXINATOR"
