@@ -40,6 +40,9 @@ alias bcus='brew cask uninstall'
 alias bczp='brew cask zap'
 alias buduc='budu && bc && bcc'
 
+# FUCK
+alias fuck='eval $(thefuck $(fc -ln -1))'
+
 # Shorthand for colorized sdcv output
 dict() {
   sdcv --color "$@" | less -r
