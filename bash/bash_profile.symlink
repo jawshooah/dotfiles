@@ -89,3 +89,8 @@ source_if_exists "$SRC_BASHRC"
 source_if_exists "$SRC_BASH_COMPLETION"
 source_if_exists "$SRC_GRC"
 source_if_exists "$SRC_SCM_BREEZE"
+
+if which nodenv &>/dev/null; then eval "$(nodenv init -)"; fi
+if which rbenv &>/dev/null; then eval "$(rbenv init -)"; fi
+if which pyenv &>/dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv &>/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
