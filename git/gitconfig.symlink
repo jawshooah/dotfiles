@@ -9,6 +9,8 @@
     excludesfile = ~/.gitignore
     ignorecase = false
     editor=vim
+	autocrlf = input
+	eol = native
 [merge]
     tool = diffmerge
     verbosity = 2
