@@ -1,137 +1,137 @@
 [user]
-    name = Josh Hagins
-    email = hagins.josh@gmail.com
+	name = Josh Hagins
+	email = hagins.josh@gmail.com
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 [core]
-    quotepath = false
-    whitespace = fix,trailing-space,space-before-tab,cr-at-eol
-    excludesfile = ~/.gitignore
-    ignorecase = false
-    editor=vim
+	quotepath = false
+	whitespace = fix,trailing-space,space-before-tab,cr-at-eol
+	excludesfile = ~/.gitignore
+	ignorecase = false
+	editor=vim
 	autocrlf = input
 	eol = native
 [merge]
-    tool = diffmerge
-    verbosity = 2
+	tool = diffmerge
+	verbosity = 2
 [push]
-    default = simple
+	default = simple
 [color]
-    ui = true
+	ui = true
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-    # meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
+	# meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 [color "status"]
-    added = green
-    changed = red
-    untracked = cyan
+	added = green
+	changed = red
+	untracked = cyan
 [alias]
-    ad = add
-    st = status
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    dc = diff --cached
-    lg = log -p
-    lc = log ORIG_HEAD.. --stat --no-merges
-    ls = ls-files
-    cl = clean
-    rb = rebase
-    pl = pull
-    ps = push
+	ad = add
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	dc = diff --cached
+	lg = log -p
+	lc = log ORIG_HEAD.. --stat --no-merges
+	ls = ls-files
+	cl = clean
+	rb = rebase
+	pl = pull
+	ps = push
 
-    # Pull with rebase
-    plr = pull --rebase
+	# Pull with rebase
+	plr = pull --rebase
 
-    # Git-gui
-    gui = !sh -c '/usr/local/opt/git/libexec/git-core/git-gui'
+	# Git-gui
+	gui = !sh -c '/usr/local/opt/git/libexec/git-core/git-gui'
 
-    # Set upstream
-    setup = !sh -c 'git branch -u origin/$1' -
+	# Set upstream
+	setup = !sh -c 'git branch -u origin/$1' -
 
-    # Clean all untracked and ignored files and directories
-    clean-all = clean -dxf
-    cla = clean -dxf
+	# Clean all untracked and ignored files and directories
+	clean-all = clean -dxf
+	cla = clean -dxf
 
-    # Log with graph
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	# Log with graph
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
-    # Uncache files
-    uc = reset HEAD
+	# Uncache files
+	uc = reset HEAD
 
-    # See new commits created by last command
-    new = !sh -c 'git log $1@{1}..$1@{0} "$@"' -
+	# See new commits created by last command
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"' -
 
-    # Add only non-whitespace changes
-    addnw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
+	# Add only non-whitespace changes
+	addnw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
 
-    # Show files ignored by git:
-    ign = ls-files -o -i --exclude-standard
+	# Show files ignored by git:
+	ign = ls-files -o -i --exclude-standard
 
-    # Prune stale remote branches
-    prune-all = !git remote | xargs -n 1 git remote prune
+	# Prune stale remote branches
+	prune-all = !git remote | xargs -n 1 git remote prune
 
-    # Common diff options
-    ch = diff --name-status
-    ds = diff --stat
-    cs = diff --cached --stat
+	# Common diff options
+	ch = diff --name-status
+	ds = diff --stat
+	cs = diff --cached --stat
 
-    # Assume file unchanged
-    assume   = update-index --assume-unchanged
-    unassume = update-index --no-assume-unchanged
-    assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+	# Assume file unchanged
+	assume   = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 
-    # Take a snapshot of uncommitted work
-    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
-    snapshots = !git stash list --grep snapshot
+	# Take a snapshot of uncommitted work
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	snapshots = !git stash list --grep snapshot
 
-    # Use version of file from current branch or merged branch
-    ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
-    theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	# Use version of file from current branch or merged branch
+	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
 [difftool "sourcetree"]
-    cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
-    path =
+	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-    cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-    trustExitCode = true
+	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
 [diff]
-    algorithm = histogram
-    tool = diffmerge
+	algorithm = histogram
+	tool = diffmerge
 	submodule = log
 	wordRegex = .
 [help]
-    autocorrect = 1
+	autocorrect = 1
 	format = html
 [hub]
-    protocol = ssh
+	protocol = ssh
 [difftool "diffmerge"]
-    cmd = diffmerge 2>/dev/null --nosplash \"$LOCAL\" \"$REMOTE\"
+	cmd = diffmerge 2>/dev/null --nosplash \"$LOCAL\" \"$REMOTE\"
 [mergetool "diffmerge"]
-    cmd = diffmerge 2>/dev/null --nosplash --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
-    trustExitCode = true
+	cmd = diffmerge 2>/dev/null --nosplash --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
 [mergetool]
-    keepBackup = false
+	keepBackup = false
 [github]
-    user = jawshooah
+	user = jawshooah
 [git-up "fetch"]
-    prune = true
+	prune = true
 [git-up "rebase"]
-    log-hook = "echo \"changes on $1:\"; git log --oneline --decorate $1..$2"
-    arguments = --preserve-merges --committer-date-is-author-date --fork-point
+	log-hook = "echo \"changes on $1:\"; git log --oneline --decorate $1..$2"
+	arguments = --preserve-merges --committer-date-is-author-date --fork-point
 [rebase]
-    autostash = true
+	autostash = true
 [rerere]
-    enabled = true
+	enabled = true
 [status]
 	submoduleSummary = true
 	showUntrackedFiles = all
