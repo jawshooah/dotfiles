@@ -137,3 +137,5 @@
 	showUntrackedFiles = all
 [pull]
 	rebase = preserve
+[fetch]
+	recurseSubmodules = on-demand
