@@ -132,3 +132,5 @@
     autostash = true
 [rerere]
     enabled = true
+[status]
+	submoduleSummary = true
