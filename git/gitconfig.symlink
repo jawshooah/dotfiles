@@ -111,6 +111,7 @@
 	wordRegex = .
 [help]
     autocorrect = 1
+	format = html
 [hub]
     protocol = ssh
 [difftool "diffmerge"]
