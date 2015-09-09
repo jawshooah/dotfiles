@@ -107,6 +107,7 @@
 [diff]
     algorithm = histogram
     tool = diffmerge
+	submodule = log
 [help]
     autocorrect = 1
 [hub]
