@@ -134,3 +134,4 @@
     enabled = true
 [status]
 	submoduleSummary = true
+	showUntrackedFiles = all
