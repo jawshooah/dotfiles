@@ -135,3 +135,5 @@
 [status]
 	submoduleSummary = true
 	showUntrackedFiles = all
+[pull]
+	rebase = preserve
