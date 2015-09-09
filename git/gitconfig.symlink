@@ -108,6 +108,7 @@
     algorithm = histogram
     tool = diffmerge
 	submodule = log
+	wordRegex = .
 [help]
     autocorrect = 1
 [hub]
