@@ -8,7 +8,7 @@
 	whitespace = fix,trailing-space,space-before-tab,cr-at-eol
 	excludesfile = ~/.gitignore
 	ignorecase = false
-	editor=vim
+	editor=subl -w
 	autocrlf = input
 	eol = native
 [merge]
@@ -16,6 +16,7 @@
 	verbosity = 2
 [push]
 	default = simple
+	recurseSubmodules = check
 [color]
 	ui = true
 [color "branch"]
@@ -43,16 +44,22 @@
 	lg = log -p
 	lc = log ORIG_HEAD.. --stat --no-merges
 	ls = ls-files
-	cl = clean
+	cl = clean -fd
 	rb = rebase
 	pl = pull
 	ps = push
 
+	# List git aliases
+	aliases = config --get-regexp '^alias\\.'
+
+	# Amend last commit without changing the log message
+	amend = commit --amend -C HEAD
+
+	# Create a fixup commit for the given ref, or HEAD if none given
+	fixup = !sh -c 'git commit --fixup ${1:-HEAD}' -
+
 	# Pull with rebase
 	plr = pull --rebase
-
-	# Git-gui
-	gui = !sh -c '/usr/local/opt/git/libexec/git-core/git-gui'
 
 	# Set upstream
 	setup = !sh -c 'git branch -u origin/$1' -
@@ -79,6 +86,7 @@
 
 	# Prune stale remote branches
 	prune-all = !git remote | xargs -n 1 git remote prune
+	pra = !git remote | xargs -n 1 git remote prune
 
 	# Common diff options
 	ch = diff --name-status
@@ -99,10 +107,10 @@
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
 [difftool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 	trustExitCode = true
 [diff]
 	algorithm = histogram
@@ -130,6 +138,7 @@
 	arguments = --preserve-merges --committer-date-is-author-date --fork-point
 [rebase]
 	autostash = true
+	autosquash = true
 [rerere]
 	enabled = true
 [status]
@@ -141,7 +150,11 @@
 	recurseSubmodules = on-demand
 [pager]
 	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
+	show = diff-so-fancy | less --tabs=1,5 -RFX
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
 [ghi]
 	token = !security find-internet-password -a jawshooah -s github.com -l 'ghi token' -w
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
