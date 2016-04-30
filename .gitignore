@@ -11,3 +11,5 @@ git/gitconfig.symlink
 bin/sack
 bin/sag
 bin/F
+
+*.swp
