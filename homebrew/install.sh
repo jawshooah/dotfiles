@@ -6,21 +6,25 @@
 # using Homebrew.
 
 # Check for Homebrew
-if test ! "$(which brew)"
+if ! which brew &>/dev/null
 then
   echo "  Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Check for Brewdler
-if test ! "$(which brewdle)"
+if ! brew tap --list | grep -qi homebrew/bundle
 then
-  echo "  Installing Brewdler for you."
-  gem install brewdler
+  echo "  Installing Homebrew-bundle for you."
+  brew tap Homebrew/bundle
 fi
 
 # Install homebrew packages
 cd "$(dirname "$0")"
-brewdle install --trace
+brew update
+if ! brew bundle check
+then
+  echo "  Installing Homebrew dependencies"
+  brew bundle
+fi
 
-exit 0

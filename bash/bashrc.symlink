@@ -4,6 +4,9 @@
 shopt -s extglob
 shopt -s globstar
 
+# Gradle shit
+alias gw='./gradlew --daemon --parallel --configure-on-demand'
+
 # Common aliases
 alias ..='cd ..'
 alias cd..='cd ..'
@@ -33,9 +36,8 @@ alias bed='brew edit'
 alias bis='brew install'
 alias bud='brew update'
 alias bug='brew upgrade'
-alias buga='brew upgrade --all'
+alias budu='brew update && brew upgrade'
 alias bus='brew uninstall'
-alias budu='bud && bd && buga'
 
 # Homebrew-cask aliases
 alias bc='brew cask'
@@ -49,7 +51,7 @@ alias bcis='brew cask install'
 alias bcug='brew cask upgrade'
 alias bcus='brew cask uninstall'
 alias bczp='brew cask zap'
-alias buduc='budu && bcl && bcc'
+alias buduc='brew update && brew upgrade && brew cleanup && brew cask cleanup'
 
 # FUCK
 alias fuck='eval $(thefuck $(fc -ln -1))'
@@ -138,12 +140,6 @@ bump_version() {
   done < <(git grep -Il "${escaped_old_version}")
 }
 
-setup_docker() {
-  local dev_status
-  dev_status="$(docker-machine status default)"
-  [[ $dev_status == Running ]] && eval "$(docker-machine env default)"
-}
-
 #TODO fix weird bug where you can't delete to start of prompt
 #setup_color_codes
 #setup_prompt
@@ -171,6 +167,13 @@ ls --color -d . >/dev/null 2>&1 && alias ls='ls --color'
 PERL_MB_OPT="--install_base \"/Users/joshuahagins/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/joshuahagins/perl5"; export PERL_MM_OPT;
 
-setup_docker
+if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
 
-if brew command command-not-found-init > /dev/null; then eval "$(brew command-not-found-init)"; fi
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+
+esfun="$HOME/src/palantir/blackbird/scripts/es/_es-functions.sh"
+[ -s "$esfun" ] && {
+  source "$esfun"
+  QUIET=1 es-load-config
+} &>/dev/null

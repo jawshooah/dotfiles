@@ -10,7 +10,7 @@ set -e
 echo ''
 
 info () {
-  printf "  [ \033[00;34m..\033[0m ] %s" "$1"
+  printf "  [ \033[00;34m..\033[0m ] %s\n" "$1"
 }
 
 user () {
@@ -52,6 +52,8 @@ setup_gitconfig () {
 
 link_file () {
   local src=$1 dst=$2
+
+  info "linking $src to $dst"
 
   local overwrite=
   local backup=
@@ -142,11 +144,12 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
+
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
-  if source bin/dot > /tmp/dotfiles-dot 2>&1
+  if source script/install && source bin/dot 2>&1
   then
     success "dependencies installed"
   else

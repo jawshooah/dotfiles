@@ -47,3 +47,5 @@ do
 done
 
 unset config_files
+
+[ -s "/Users/jhagins/.scm_breeze/scm_breeze.sh" ] && source "/Users/jhagins/.scm_breeze/scm_breeze.sh"

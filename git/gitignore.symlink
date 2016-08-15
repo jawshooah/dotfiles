@@ -37,9 +37,10 @@
 ehthumbs.db
 Thumbs.db
 
-# Sublime Text 2 files #
+# Sublime Text files #
 ########################
 *.sublime-workspace
+*.sublime-project
 
 # Vim generated files #
 #######################

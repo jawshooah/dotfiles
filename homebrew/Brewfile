@@ -1,70 +1,30 @@
 # Homebrew Completions
 tap 'homebrew/completions'
 
-# Binaries (not built from source)
-tap 'homebrew/binary'
-
 # Git stuff
 brew 'git'
 brew 'git-flow-avh'
 brew 'hub'
-brew 'legit'
 
 # GNU Core Utilities
 brew 'coreutils'
 brew 'findutils'
 brew 'gnu-sed'
 
-# Python
-brew 'python'
-brew 'python3'
-
-# Ruby
-brew 'ruby'
-brew 'ruby-build'
-
-# JavaScript
-brew 'node'
-brew 'jshint'
-brew 'jsl'
-
-# Java
-cask 'java'
-cask 'java7'
-
-# Scala
-brew 'scala'
-brew 'sbt'
-brew 'scalastyle'
-cask 'scala-ide'
-cask 'intellij-idea-ce'
-
 # Productivity
 brew 'psgrep'
 brew 'vim'
-
-# Versioned casks
-tap 'caskroom/homebrew-versions'
 
 # XQuartz
 cask 'xquartz'
 
 # Web
 cask 'google-chrome'
-cask 'silverlight'
 cask 'skype'
-cask 'flash'
 
 # Developer tools
-cask 'chrome-devtools'
 cask 'sublime-text3'
-cask 'xamarin-studio'
 cask 'diffmerge'
-
-# Database tools
-cask 'mysqlworkbench'
-cask 'pgadmin3'
-cask 'robomongo'
 
 # Media
 cask 'music-manager'
@@ -74,14 +34,3 @@ cask 'spotify'
 # Cloud Storage
 cask 'dropbox'
 cask 'google-drive'
-
-# Local system info
-cask 'disk-inventory-x'
-cask 'menumeters'
-
-# Android
-cask 'android-file-transfer'
-
-# Gaming
-cask 'steam'
-cask 'origin'

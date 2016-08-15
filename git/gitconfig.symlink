@@ -1,16 +1,17 @@
 [user]
-	name = Josh Hagins
-	email = hagins.josh@gmail.com
+	name = Joshua Hagins
+	email = jhagins@palantir.com
 [credential]
 	helper = osxkeychain
 [core]
 	quotepath = false
 	whitespace = fix,trailing-space,space-before-tab,cr-at-eol
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/jhagins/.gitignore
 	ignorecase = false
 	editor=subl -w
 	autocrlf = input
 	eol = native
+	commentChar = %
 [merge]
 	tool = diffmerge
 	verbosity = 2
@@ -117,6 +118,7 @@
 	tool = diffmerge
 	submodule = log
 	wordRegex = .
+	compactionHeuristic = true
 [help]
 	autocorrect = 1
 	format = html
@@ -158,3 +160,9 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
+[commit]
+	template = /Users/jhagins/.stCommitMsg
+[submodule]
+	fetchJobs = 4
+[interactive]
+	diffFilter = diff-highlight
