@@ -1,3 +1,5 @@
+.envrc
+
 # Compiled source #
 ###################
 *.com
@@ -18,12 +20,12 @@
 *.jar
 *.rar
 *.tar
+*.tgz
 *.zip
 
 # Logs and databases #
 ######################
 *.log
-*.sql
 *.sqlite
 
 # OS generated files #
@@ -36,6 +38,7 @@
 .localized
 ehthumbs.db
 Thumbs.db
+~*
 
 # Sublime Text files #
 ########################
@@ -45,3 +48,7 @@ Thumbs.db
 # Vim generated files #
 #######################
 *.swp
+
+# Rejected patch files #
+########################
+*.rej
