@@ -49,10 +49,10 @@ source_if_exists "$SRC_OH_MY_GIT"
 source_if_exists "$SRC_TOP_SECRET"
 source_if_exists "$SRC_PG_DASH"
 
-if which nodenv &>/dev/null; then eval "$(nodenv init -)"; fi
-if which rbenv &>/dev/null; then eval "$(rbenv init -)"; fi
-if which pyenv &>/dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv &>/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-#if which scmpuff &>/dev/null; then eval "$(scmpuff init -s)"; fi
+if hash nodenv 2>/dev/null; then eval "$(nodenv init -)"; fi
+if hash rbenv 2>/dev/null; then eval "$(rbenv init -)"; fi
+if hash pyenv 2>/dev/null; then eval "$(pyenv init -)"; fi
+if hash pyenv-virtualenv 2>/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+if hash direnv 2>/dev/null; then eval "$(direnv hook bash)"; fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

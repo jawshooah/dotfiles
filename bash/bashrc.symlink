@@ -6,6 +6,7 @@ shopt -s globstar
 
 # Gradle shit
 alias gw='./gradlew --daemon --parallel --configure-on-demand'
+alias gwi='gw --info'
 
 # Common aliases
 alias ..='cd ..'
@@ -27,7 +28,7 @@ alias svn='colorsvn'
 alias lpcp='lpass show --clip --password'
 
 # Homebrew aliases
-alias brew='env PATH=${PATH//$(pyenv root)\/shims:/} brew'
+alias brew='env PATH=${PATH//$(pyenv root)\/shims:/} SSL_CERT_FILE="" CURL_CA_BUNDLE="" brew'
 alias bd='brew doctor'
 alias bh='brew home'
 alias bi='brew info'
@@ -143,7 +144,7 @@ bump_version() {
 #TODO fix weird bug where you can't delete to start of prompt
 #setup_color_codes
 #setup_prompt
-PS1='\[\033[0;36m\]\u\[\033[00m\] in \[\033[0;36m\]$( pwd )\n\[\033[1;36m\]\$\[\033[;m\] '
+PS1='\[\033[0;36m\]\D{%F %T} - \u\[\033[00m\] in \[\033[0;36m\]$( pwd )\n\[\033[1;36m\]\$\[\033[;m\] '
 
 export SUDO_PS1="\[\h:\w\] \u\\$ "
 
@@ -159,7 +160,10 @@ export GIT_PS1_SHOWCOLORHINTS=1
 
 export EDITOR='subl -n -w'
 export GNUTERM='x11'
+
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
+export HOMEBREW_DEVELOPER='1'
+export HOMEBREW_NO_AUTO_UPDATE='1'
 
 # Change ls alias if we are using GNU
 ls --color -d . >/dev/null 2>&1 && alias ls='ls --color'
@@ -171,9 +175,18 @@ if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew comma
 
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
-
 esfun="$HOME/src/palantir/blackbird/scripts/es/_es-functions.sh"
 [ -s "$esfun" ] && {
   source "$esfun"
   QUIET=1 es-load-config
 } &>/dev/null
+
+function mpPreregisterEmail {
+  EMAIL="${1/@/%40}"
+  curl -XPOST -H "Authorization: Bearer ${MULTIPASS_API}" "https://woodland.palantircloud.com/multipass/api/preregister/users/okta/${EMAIL}"
+}
+
+neofetch
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+export GRADLE_OPTS="-Djavax.net.ssl.trustStore=$(/usr/libexec/java_home)/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Djavax.net.ssl.keyStore=$(/usr/libexec/java_home)/jre/lib/security/cacerts -Djavax.net.ssl.keyStorePassword=changeit"
