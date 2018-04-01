@@ -1,6 +1,6 @@
 [user]
 	name = Joshua Hagins
-	email = jhagins@palantir.com
+	email = hagins.josh@gmail.com
 [credential]
 	helper = osxkeychain
 [core]
@@ -11,7 +11,6 @@
 	editor=subl -w
 	autocrlf = input
 	eol = native
-	commentChar = %
 [merge]
 	tool = diffmerge
 	verbosity = 2
@@ -30,6 +29,8 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+	meta = 227
+	commit = 227 bold
 [color "status"]
 	added = green
 	changed = red
@@ -166,3 +167,8 @@
 	fetchJobs = 4
 [interactive]
 	diffFilter = diff-highlight
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
