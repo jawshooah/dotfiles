@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
 
 export GOPATH="$HOME/.go"
-export JAVA_HOME="$(/usr/libexec/java_home)"
 
-PATH='/sbin'
-PATH="/usr/sbin:$PATH"
-PATH="/usr/local/sbin:$PATH"
-PATH="/bin:$PATH"
-PATH="/usr/bin:$PATH"
-PATH="/usr/X11/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
-PATH="/usr/local/texlive/2015/bin/universal-darwin:$PATH"
-#PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-#PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
 PATH="$HOME/.nodenv/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
@@ -24,35 +14,4 @@ PATH="$GOPATH/bin:$PATH"
 PATH="$HOME/bin:$PATH"
 export PATH
 
-#MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-#MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-#export MANPATH
-
-SRC_BASHRC="$HOME/.bashrc"
-SRC_BASH_COMPLETION="$(brew --prefix)/etc/bash_completion"
-SRC_GRC="$(brew --prefix)/etc/grc.bashrc"
-SRC_SCM_BREEZE="$HOME/.scm_breeze/scm_breeze.sh"
-SRC_OH_MY_GIT="$HOME/.oh-my-git/prompt.sh"
-SRC_TOP_SECRET="$HOME/.bash_secret"
-SRC_PG_DASH="$HOME/.pg_dash_profile"
-
-source_if_exists() {
-  [[  -s "$1"  ]] && source "$1"
-}
-
-[[ $- =~ i ]] && source_if_exists "$SRC_BASHRC"
-
-source_if_exists "$SRC_BASH_COMPLETION"
-source_if_exists "$SRC_GRC"
-source_if_exists "$SRC_SCM_BREEZE"
-source_if_exists "$SRC_OH_MY_GIT"
-source_if_exists "$SRC_TOP_SECRET"
-source_if_exists "$SRC_PG_DASH"
-
-if hash nodenv 2>/dev/null; then eval "$(nodenv init -)"; fi
-if hash rbenv 2>/dev/null; then eval "$(rbenv init -)"; fi
-if hash pyenv 2>/dev/null; then eval "$(pyenv init -)"; fi
-if hash pyenv-virtualenv 2>/dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-if hash direnv 2>/dev/null; then eval "$(direnv hook bash)"; fi
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+[[ $- =~ i ]] && source "$HOME/.bashrc"

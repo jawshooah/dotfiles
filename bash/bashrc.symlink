@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# set -x
+
 # shell options
 shopt -s extglob
 shopt -s globstar
@@ -28,7 +30,8 @@ alias svn='colorsvn'
 alias lpcp='lpass show --clip --password'
 
 # Homebrew aliases
-alias brew='env PATH=${PATH//$(pyenv root)\/shims:/} SSL_CERT_FILE="" CURL_CA_BUNDLE="" brew'
+# alias brew='env PATH=${PATH//$(pyenv root)\/shims:/} SSL_CERT_FILE="" CURL_CA_BUNDLE="" brew'
+alias brew='env SSL_CERT_FILE="" CURL_CA_BUNDLE="" brew'
 alias bd='brew doctor'
 alias bh='brew home'
 alias bi='brew info'
@@ -158,7 +161,7 @@ export GIT_PS1_SHOWUPSTREAM="verbose"
 export GIT_PS1_DESCRIBE_STYLE="branch"
 export GIT_PS1_SHOWCOLORHINTS=1
 
-export EDITOR='subl -n -w'
+export EDITOR='vim'
 export GNUTERM='x11'
 
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
@@ -166,27 +169,47 @@ export HOMEBREW_DEVELOPER='1'
 export HOMEBREW_NO_AUTO_UPDATE='1'
 
 # Change ls alias if we are using GNU
-ls --color -d . >/dev/null 2>&1 && alias ls='ls --color'
+if ls --color -d . >/dev/null 2>&1; then alias ls='ls --color'; fi
 
-PERL_MB_OPT="--install_base \"/Users/joshuahagins/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/joshuahagins/perl5"; export PERL_MM_OPT;
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export GRADLE_OPTS="-Djavax.net.ssl.trustStore=${JAVA_HOME}/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Djavax.net.ssl.keyStore=${JAVA_HOME}/jre/lib/security/cacerts -Djavax.net.ssl.keyStorePassword=changeit"
 
-if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
-
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
-
-esfun="$HOME/src/palantir/blackbird/scripts/es/_es-functions.sh"
-[ -s "$esfun" ] && {
-  source "$esfun"
-  QUIET=1 es-load-config
-} &>/dev/null
-
-function mpPreregisterEmail {
-  EMAIL="${1/@/%40}"
-  curl -XPOST -H "Authorization: Bearer ${MULTIPASS_API}" "https://woodland.palantircloud.com/multipass/api/preregister/users/okta/${EMAIL}"
+source_if_exists() {
+  if [[  -s "$1"  ]]; then 
+    printf "Sourcing $1 ... "
+    ts=$(gdate +%s%N)
+    source "$1"
+    tt=$((($(gdate +%s%N) - $ts)/1000000))
+    printf "$tt ms\n"
+  fi
 }
 
-neofetch
+SRC_BASH_COMPLETION="$(brew --prefix)/etc/bash_completion"
+SRC_SCM_BREEZE="${HOME}/.scm_breeze/scm_breeze.sh"
+SRC_OH_MY_GIT="${HOME}/.oh-my-git/prompt.sh"
+SRC_TOP_SECRET="${HOME}/.bash_secret"
+SRC_ITERM2_SHELL_INTEGRATION="${HOME}/.iterm2_shell_integration.bash"
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
-export GRADLE_OPTS="-Djavax.net.ssl.trustStore=$(/usr/libexec/java_home)/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Djavax.net.ssl.keyStore=$(/usr/libexec/java_home)/jre/lib/security/cacerts -Djavax.net.ssl.keyStorePassword=changeit"
+source_if_exists "${SRC_BASH_COMPLETION}"
+source_if_exists "${SRC_SCM_BREEZE}"
+source_if_exists "${SRC_OH_MY_GIT}"
+source_if_exists "${SRC_TOP_SECRET}"
+source_if_exists "${SRC_ITERM2_SHELL_INTEGRATION}"
+
+eval_if_hash() {
+  if hash "$1" 2>/dev/null; then
+    printf "Initializing $1 ... "
+    ts=$(gdate +%s%N)
+    eval "$2"
+    tt=$((($(gdate +%s%N) - $ts)/1000000))
+    printf "$tt ms\n"
+  fi
+}
+
+eval_if_hash direnv "$(direnv hook bash)"
+eval_if_hash nodenv "$(nodenv init -)"
+eval_if_hash rbenv "$(rbenv init -)"
+eval_if_hash pyenv "$(pyenv init -)"
+
+# Show OS info when opening a new terminal
+neofetch
