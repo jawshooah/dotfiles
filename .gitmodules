@@ -10,3 +10,6 @@
 [submodule "git/scm_breeze.symlink"]
 	path = git/scm_breeze.symlink
 	url = https://github.com/jawshooah/scm_breeze
+[submodule "git/oh-my-git.symlink"]
+	path = git/oh-my-git.symlink
+	url = https://github.com/arialdomartini/oh-my-git.git
