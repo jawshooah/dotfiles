@@ -6,7 +6,6 @@ PATH="/usr/local/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
 PATH="$HOME/.nodenv/bin:$PATH"
 PATH="$HOME/.pyenv/bin:$PATH"
-PATH="$HOME/.jenv/bin:$PATH"
 for ruby_dir in $HOME/.gem/ruby/*; do
   PATH="$ruby_dir/bin:$PATH"
 done

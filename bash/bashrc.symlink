@@ -207,10 +207,9 @@ eval_if_hash direnv "$(direnv hook bash)"
 eval_if_hash nodenv "$(nodenv init -)"
 eval_if_hash rbenv "$(rbenv init -)"
 eval_if_hash pyenv "$(pyenv init -)"
-eval_if_hash jenv "$(jenv init -)"
 
 # Java and Gradle stuff
-# export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVA_HOME="$(/usr/libexec/java_home)"
 export GRADLE_OPTS="-Djavax.net.ssl.trustStore=$(/usr/libexec/java_home)/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Djavax.net.ssl.keyStore=$(/usr/libexec/java_home)/jre/lib/security/cacerts -Djavax.net.ssl.keyStorePassword=changeit"
 
 # Show OS info when opening a new terminal
