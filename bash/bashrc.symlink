@@ -211,6 +211,3 @@ eval_if_hash pyenv "$(pyenv init -)"
 # Java and Gradle stuff
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export GRADLE_OPTS="-Djavax.net.ssl.trustStore=$(/usr/libexec/java_home)/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Djavax.net.ssl.keyStore=$(/usr/libexec/java_home)/jre/lib/security/cacerts -Djavax.net.ssl.keyStorePassword=changeit"
-
-# Show OS info when opening a new terminal
-neofetch
